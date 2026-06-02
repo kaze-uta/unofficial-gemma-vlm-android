@@ -1,0 +1,12 @@
+{
+  "name": "GemmaVlmApp",
+  "displayName": "GemmaVlmApp",
+  "expo": {
+    "name": "GemmaVlmApp",
+    "slug": "gemma-vlm-app",
+    "version": "1.0.0",
+    "android": {
+      "package": "com.gemmavlmapp"
+    }
+  }
+}
