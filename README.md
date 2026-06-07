@@ -6,7 +6,8 @@ Google の **Gemma-3n** Vision Language Model を Android 端末上で**オン�
 > [!IMPORTANT]
 > **非公式プロジェクト / Unofficial**
 > このアプリは個人が開発した**非公式**のもので、**Google とは一切関係ありません**（提携・後援・承認なし）。
-> "Gemma" は Google LLC の商標です。モデルの利用は [Gemma Terms of Use](https://ai.google.dev/gemma/terms) に従ってください。
+> "Gemma" は Google LLC の商標です。本リポジトリでは、利用しているモデルを指す説明的用法としてのみ使用しています。
+> Gemma-3n モデルの利用は [Gemma Terms of Use](https://ai.google.dev/gemma/terms) に従ってください。
 
 ## できること
 
@@ -104,5 +105,7 @@ tar -xzf gemma-3n-tflite-gemma-3n-e2b-it-int4-v1.tar.gz
 
 ## ライセンス
 
-- 本アプリのコード: **MIT License**
-- Gemma モデル: [Gemma Terms of Use](https://ai.google.dev/gemma/terms) に従って利用してください
+- 本アプリのコード: **MIT License**（[LICENSE](./LICENSE)）
+- Gemma-3n モデル: [Gemma Terms of Use](https://ai.google.dev/gemma/terms) に従って利用してください
+
+"Gemma" は Google LLC の商標です。本プロジェクトは非公式であり、Google による提携・後援・承認はありません。

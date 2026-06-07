@@ -78,3 +78,6 @@ yarn-error.log
 
 # Expo
 .expo/
+
+# Model weights (fetched separately / placed via adb — do not commit)
+*.task
