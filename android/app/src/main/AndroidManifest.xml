@@ -1,10 +1,12 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
 
+    <!-- INTERNET: 初回のモデルダウンロードのみ。推論は完全オフライン -->
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.CAMERA" />
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.MANAGE_EXTERNAL_STORAGE" />
+    <!-- RECORD_AUDIO: Gemma 4 の音声入力（マイク録音）用 -->
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <!-- ギャラリー画像選択用（Android 13+）。モデルはアプリ専用領域にDLするため全ファイルアクセスは不要 -->
+    <uses-permission android:name="android.permission.READ_MEDIA_IMAGES" />
 
     <application
       android:name=".MainApplication"
@@ -15,8 +17,7 @@
       android:theme="@style/AppTheme"
       android:usesCleartextTraffic="${usesCleartextTraffic}"
       android:supportsRtl="true"
-      android:largeHeap="true"
-      android:requestLegacyExternalStorage="true">
+      android:largeHeap="true">
 
       <!-- Android 12 (API 31) 以降で GPU 加速を有効にするために必要 -->
       <uses-native-library android:name="libOpenCL.so" android:required="false" />

@@ -7,6 +7,10 @@
     "version": "1.0.0",
     "android": {
       "package": "com.gemmavlmapp"
-    }
+    },
+    "plugins": [
+      "expo-audio",
+      "expo-asset"
+    ]
   }
 }

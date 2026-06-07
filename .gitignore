@@ -78,3 +78,11 @@ yarn-error.log
 
 # Expo
 .expo/
+
+# Model weights (downloaded at runtime / placed manually — do not commit)
+*.litertlm
+*.task
+*.bin
+
+# Draft blog article 
+docs/

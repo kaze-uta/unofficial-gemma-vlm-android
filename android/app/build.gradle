@@ -107,13 +107,25 @@ android {
     }
 }
 
+// LiteRT-LM 0.13.1 は Kotlin 2.3.0 メタデータでビルドされている。本プロジェクトの
+// Kotlin コンパイラ(2.1.x, RN 0.84 が固定)はそのまま 2.3 メタデータを読めないため、
+// メタデータ版チェックをスキップして AAR を消費する。
+tasks.withType(org.jetbrains.kotlin.gradle.tasks.KotlinCompile).configureEach {
+    kotlinOptions {
+        freeCompilerArgs += ["-Xskip-metadata-version-check"]
+    }
+}
+
 dependencies {
     // The version of react-native is set by the React Native Gradle Plugin
     implementation("com.facebook.react:react-android")
 
-    // MediaPipe LLM Inference API
-    implementation 'com.google.mediapipe:tasks-genai:0.10.33'
-    implementation 'com.google.mediapipe:tasks-vision:0.10.33'
+    // LiteRT-LM — Google 公式オンデバイス LLM 推論ランタイム（MediaPipe tasks-genai の後継）
+    // Gemma 4 QAT モバイル量子化（.litertlm, 2/4/8bit 混在）・画像/音声・function calling 対応
+    implementation 'com.google.ai.edge.litertlm:litertlm-android:0.13.1'
+
+    // Kotlin coroutines（Flow ストリーミング用）
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.8.1'
 
     if (hermesEnabled.toBoolean()) {
         implementation("com.facebook.react:hermes-android")
